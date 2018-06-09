@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace dev2
@@ -16,17 +17,22 @@ namespace dev2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //app.UseDeveloperExceptionPage();
+            //app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.UseMvc(cfg =>
             {
-                cfg.MapRoute("Default", "{controller}/{action}/{id?}", new { Controllers = "App", Action = "Index" });
+                cfg.MapRoute("default", "{controller}/{action}/{id?}",  new { controller = "App", Action = "Index" });
             });
+
+           
             
 
         }

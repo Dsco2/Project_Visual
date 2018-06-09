@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace dev2.Controllers
 {
-    public class AppControllers : Controller
+    public class AppController : Controller
     {
         public IActionResult Index()
         {
