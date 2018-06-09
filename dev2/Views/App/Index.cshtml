@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <h1>@ViewBag.Title</h1>
+    <div id="image">
+        <img src="~\img\imagen_prueba.JPG" height="200" width="300">
+        <br />
+        <label>El siguiente es un ejemplo de Css</label>
+    </div>
+
+    <div id="Login">
+        <button id="Login_Button">Login</button>
+    </div>
+
+    <div id="form">
+
+        <label>Name:</label>
+        <br />
+        <input type="text" />
+        <br />
+        <label>User:</label>
+        <br />
+        <input type="text" />
+        <br />
+        <label>Password:</label>
+        <br />
+        <input type="password" />
+        <br />
+        <label>Email:</label>
+        <br />
+        <input type="email" />
+        <br />
+        <input type="submit" value="Submit" />
+
+    </div>
+
+    <script src="~/lib/Jquery/dist/jquery.min.js"></script>
+    <script src="~/js/index.js"></script>
+</body>
+</html>
