@@ -12,5 +12,19 @@ namespace dev2.Controllers
         {
             return View();
         }
+
+        [HttpGet("Contact")]
+        public IActionResult Contact()
+        {
+            ViewBag.Title = "Contact Us";
+            throw new InvalidOperationException("Bad Things Happen");
+            return View();
+        }
+        [HttpGet("About")]
+        public IActionResult About()
+        {
+            ViewBag.Title = "About US";
+            return View();
+        }
     }
 }

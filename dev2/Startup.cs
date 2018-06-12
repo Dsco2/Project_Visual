@@ -24,7 +24,14 @@ namespace dev2
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             //app.UseDeveloperExceptionPage();
-            //app.UseDefaultFiles();
+            if(env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/error");
+            }
             app.UseStaticFiles();
 
             app.UseMvc(cfg =>

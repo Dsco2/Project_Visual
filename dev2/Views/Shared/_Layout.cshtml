@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Test:@ViewBag.Title</title>
+    <link href="/css/site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <header>Welcome to the try Page</header>
+    <section>
+        <h1>Test: @ViewBag.Title</h1>
+        <menu>
+            <ul>
+                <li><a asp-controller="App" asp-action="Index">Home</a></li>
+                <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
+                <li><a asp-controller="App" asp-action="About">About Us</a></li>
+            </ul>
+        </menu>
+
+        @RenderBody()
+    </section>
+    
+    <footer>This is a try Page</footer>
+
+    <script src="lib/Jquery/dist/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

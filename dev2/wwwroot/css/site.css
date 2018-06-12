@@ -27,5 +27,17 @@
 
 #login_button {
     font-family:Baloo;
-
 }
+
+menu li {
+    display: inline;
+    font-family: fantasy;
+}
+
+menu li:after {
+    content: " |";
+}
+
+    menu li:last-of-type::after {
+        content: " ";
+    }
