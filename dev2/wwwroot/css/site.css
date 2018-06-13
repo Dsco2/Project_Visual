@@ -1,4 +1,8 @@
-﻿#form {
+﻿/*header {
+    background-color: cornflowerblue;
+}*/
+
+/*#form {
     font-family: 'Agency FB';
     font-size: 20px;
     width: 220px;
@@ -41,3 +45,7 @@ menu li:after {
     menu li:last-of-type::after {
         content: " ";
     }
+
+span {
+    color: darkred;
+}*/

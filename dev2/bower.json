@@ -2,6 +2,10 @@
   "name": "asp.net",
   "private": true,
   "dependencies": {
-    "Jquery": "3.2.1"
+    "Jquery": "3.2.1",
+    "bootstrap": "~3.3.7",
+    "jquery-validation": "~1.17.0",
+    "jquery-validation-unobtrusive": "~3.2.6",
+    "Font-Awesome": "~4.7.0"
    }
   }
