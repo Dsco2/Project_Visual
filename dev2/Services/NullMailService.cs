@@ -11,7 +11,7 @@ namespace dev2.Services
         private readonly ILogger<NullMailService> _logger;
         private ILogger<NullMailService> logger;
 
-        public NullMailService (ILogger<NullMailService> _logger)
+        public NullMailService (ILogger<NullMailService> logger)
         {
             _logger = logger;
         }
