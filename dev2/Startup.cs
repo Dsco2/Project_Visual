@@ -30,7 +30,11 @@ namespace dev2
         {
             services.AddDbContext<Dev2Context>(cfg =>
             {
-                cfg.UseSqlServer(_config.GetConnectionString("Dev2ConnectionString"));
+                //cfg.UseSqlServer(_config.GetConnectionString("Dev2ConnectionString"));
+                cfg.UseSqlServer("server = (localdb)\\ProjectsV13; Database = DevDb; Integrated Security = true;");
+
+
+
             }
             );
 

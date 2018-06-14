@@ -14,6 +14,8 @@ namespace dev2.Data
     {
         public Dev2Context(DbContextOptions<Dev2Context> options) : base(options)
         {
+            // aca no va tambien la cadena de conexjon a db? según el video no la usaron
+
 
         }
 
