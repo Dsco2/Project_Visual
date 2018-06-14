@@ -10,14 +10,15 @@ namespace dev2.ViewModels
     {
         [Required]
         [MaxLength(12)]
-        public string name { get; set; }
+        public string Name { get; set; }
         [Required]
-        public string user { get; set; }
-        [Required]
-        public string pass { get; set; }
+        public string Subject { get; set; }
         [Required]
         [EmailAddress]
-        public string email { get; set; }
+        public string Email { get; set; }
+        [Required]
+        public string Message { get; set; }
+       
         
     }
 }
