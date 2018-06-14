@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace dev2.Data
 {
+    
+
+
     public class Dev2Context : DbContext 
     {
+        public Dev2Context(DbContextOptions<Dev2Context> options) : base(options)
+        {
+
+        }
+
+
         public DbSet <Product>Products { get; set; }
         public DbSet <Order> Orders { get; set; }
     }
