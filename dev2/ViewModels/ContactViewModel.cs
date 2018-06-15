@@ -10,6 +10,7 @@ namespace dev2.ViewModels
     {
         [Required]
         [MaxLength(12)]
+        [MinLength(3)]
         public string Name { get; set; }
         [Required]
         public string Subject { get; set; }
@@ -17,6 +18,7 @@ namespace dev2.ViewModels
         [EmailAddress]
         public string Email { get; set; }
         [Required]
+        [MaxLength(250)]
         public string Message { get; set; }
        
         

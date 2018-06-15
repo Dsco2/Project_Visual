@@ -42,6 +42,9 @@ namespace dev2
 
 
             services.AddTransient<IMailService, NullMailService>();
+
+            services.AddTransient<Dev2seeder>();
+            services.AddScoped<IDev2Repository, Dev2Repository>();
             services.AddMvc();
 
         }
@@ -65,6 +68,14 @@ namespace dev2
                 cfg.MapRoute("default", "{controller}/{action}/{id?}",  new { controller = "App", Action = "Index" });
             });
 
+            if(env.IsDevelopment())
+            {
+                using (var scope = app.ApplicationServices.CreateScope())
+                {
+                    var seeder = scope.ServiceProvider.GetService<Dev2seeder>();
+                    seeder.Seed();
+                }
+            }
            
             
 

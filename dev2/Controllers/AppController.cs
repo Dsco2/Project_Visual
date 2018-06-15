@@ -12,12 +12,12 @@ namespace dev2.Controllers
     public class AppController : Controller
     {
         private readonly IMailService _mailService;
-        private readonly Dev2Context _context;
+        private readonly IDev2Repository _repository;
 
-        public AppController(IMailService mailService, Dev2Context context)
+        public AppController(IMailService mailService, IDev2Repository repository)
         {
             _mailService = mailService;
-           _context = context;
+            _repository = repository;
         }
 
 
@@ -60,14 +60,12 @@ namespace dev2.Controllers
             return View();
         }
 
-
+        [HttpGet("Shop")]
         public IActionResult Shop()
         {
-            var results = from p in _context.Products
-                          orderby p.Category
-                        select p;
+            var results = _repository.GetAllProducts();
 
-          return View(results.ToList());
+          return View(results);
         }
 
 

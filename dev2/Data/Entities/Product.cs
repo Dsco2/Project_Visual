@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DutchTreat.Data.Entities
+namespace dev2.Data.Entities
 {
   public class Product
   {
