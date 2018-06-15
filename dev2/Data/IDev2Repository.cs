@@ -7,6 +7,10 @@ namespace dev2.Data
     {
         IEnumerable<Product> GetAllProducts();
         IEnumerable<Product> GetProductsByCategory(string category);
+        IEnumerable<Order> GetAllOrders();
+        Order GetOrderById(int id);
+
         bool SaveChanges();
+        void AddEntity(object model);
     }
 }

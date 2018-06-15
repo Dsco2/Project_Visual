@@ -1,4 +1,5 @@
 ﻿using dev2.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,33 @@ namespace dev2.Data
             _ctx = ctx;
         }
 
+        public void AddEntity(object model)
+        {
+            _ctx.Add(model);
+        }
+
+        public IEnumerable<Order> GetAllOrders()
+        {
+            return _ctx.Orders
+                .Include(o => o.Items)
+                .ThenInclude(i => i.Product)
+                .ToList();
+        }
+
         public IEnumerable <Product> GetAllProducts()
         {
             return _ctx.Products
                 .OrderBy(p => p.Title)
                 .ToList();
+        }
+
+        public Order GetOrderById(int id)
+        {
+            return _ctx.Orders
+                .Include(o => o.Items)
+                .ThenInclude(i => i.Product)
+                .Where(o => o.Id == id)
+                .FirstOrDefault();
         }
 
         public IEnumerable<Product> GetProductsByCategory(string category)

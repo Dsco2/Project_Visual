@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 
 namespace dev2
 {
@@ -33,19 +34,15 @@ namespace dev2
                 //cfg.UseSqlServer(_config.GetConnectionString("Dev2ConnectionString"));
                 cfg.UseSqlServer("server = (localdb)\\ProjectsV13; Database = DevDb; Integrated Security = true;");
 
-
-
             }
             );
-
-
-
 
             services.AddTransient<IMailService, NullMailService>();
 
             services.AddTransient<Dev2seeder>();
             services.AddScoped<IDev2Repository, Dev2Repository>();
-            services.AddMvc();
+            services.AddMvc()
+                .AddJsonOptions(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
         }
 
